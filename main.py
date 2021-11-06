@@ -40,4 +40,5 @@ async def on_ready():
 			print("❌ Failed to load cog {0}\n>>> {1}".format(cog, exc))
 
 keep_alive()
-client.run(os.environ['TOKEN'])
+client.run(os.environ['TOKEN']) 
+# Since I'm using Repl.it, I use os.environ. you can instead add token like *client.run('YOUR TOKEN')*
