@@ -1,0 +1,12 @@
+discord
+discord.py
+discord.py[voice]
+discord.py-message-components
+PyNaCl
+beautifulsoup4
+urllib3
+requests
+Pillow
+opencv-python
+webcolors
+numpy
