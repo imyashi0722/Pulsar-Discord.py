@@ -8,11 +8,13 @@ import settings
 from server import keep_alive
 
 intents = discord.Intents.default()
+intents.members = True
 
 cogs: list = ["Functions.Fun.games", "Functions.Fun.gameinfos", "Functions.Fun.otherfuncommands", "Functions.Info.info",
         "Functions.Misc.misc", "Functions.NewMember.newmember", "Functions.Admin.admin", "Functions.Color.color"]
 
 client = commands.Bot(command_prefix=commands.when_mentioned_or(settings.Prefix), case_insensitive=True, help_command=None, intents=intents)
+client.remove_command('help')
 
 @client.event
 async def on_command_error(ctx, error):
@@ -40,5 +42,4 @@ async def on_ready():
 			print("❌ Failed to load cog {0}\n>>> {1}".format(cog, exc))
 
 keep_alive()
-client.run(os.environ['TOKEN']) 
-# Since I'm using Repl.it, I use os.environ. you can instead add token like *client.run('YOUR TOKEN')*
+client.run(os.environ['TOKEN'])
